@@ -2,13 +2,16 @@
 #include "MyLittleEngineMain.h"
 #include "Common\DirectXHelper.h"
 
+#if _WINDOWS
+#include "Common\WinPixGPUCapturererLoader.h"
+#endif
+
 using namespace MyLittleEngine;
 using namespace Windows::Foundation;
 using namespace Windows::System::Threading;
 using namespace Concurrency;
 
 // DirectX 12 애플리케이션 템플릿에 대한 설명은 https://go.microsoft.com/fwlink/?LinkID=613670&clcid=0x412에 나와 있습니다.
-
 // 애플리케이션이 로드되면 애플리케이션 자산을 로드하고 초기화합니다.
 MyLittleEngineMain::MyLittleEngineMain()
 {
@@ -18,6 +21,9 @@ MyLittleEngineMain::MyLittleEngineMain()
 	m_timer.SetFixedTimeStep(true);
 	m_timer.SetTargetElapsedSeconds(1.0 / 60);
 	*/
+#if _WINDOWS
+	LoadPIXGPUCapturer();
+#endif
 }
 
 // 렌더러를 만들고 초기화합니다.

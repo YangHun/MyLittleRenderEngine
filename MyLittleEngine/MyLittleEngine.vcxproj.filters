@@ -63,4 +63,20 @@
       <Filter>자산</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="MyLittleEngineMain.cpp" />
+    <ClCompile Include="pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="MyLittleEngineMain.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Common\WinPixGPUCapturererLoader.h">
+      <Filter>공용</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
 </Project>
